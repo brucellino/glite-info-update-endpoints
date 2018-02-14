@@ -91,11 +91,12 @@ def usage():
             """
 def get_osg_urls():
 
-    osg_goc_url = "http://myosg.grid.iu.edu/rgsummary/xml?datasource=summary&summary_attrs_showwlcg=on&all_resources=on&gridtype=on&gridtype_1=on&active=on&active_value=1&disable_value=1"
+    osg_goc_url = "https://myosg.grid.iu.edu/rgsummary/xml?datasource=summary&summary_attrs_showwlcg=on&all_resources=on&gridtype=on&gridtype_1=on&active=on&active_value=1&disable_value=1"
 
     try:
         response = urllib2.urlopen(osg_goc_url).read()
     except:
+        log.error("unable to get list of OSG OIM sites: %s" % (str(e), ))
         return ""
 
     root = ElementTree.XML(response) 
@@ -126,11 +127,12 @@ def get_osg_urls():
 
 def get_egi_urls(status):
 
-    egi_goc_url = "http://goc.egi.eu/gocdbpi/public/?method=get_site_list&certification_status=%s&production_status=Production" %(status,)
+    egi_goc_url = "https://goc.egi.eu/gocdbpi/public/?method=get_site_list&certification_status=%s&production_status=Production" %(status,)
 
     try:
         response = urllib2.urlopen(egi_goc_url).read()
     except: 
+        log.error("unable to get GOCDB Production %s sites: %s" % (status, str(e)))
         return ""
 
     root = ElementTree.XML(response) 
