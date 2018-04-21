@@ -115,7 +115,7 @@ def get_url_data(url):
 
 def get_osg_urls():
 
-    osg_goc_url = "https://myosg.grid.iu.edu/rgsummary/xml?datasource=summary&summary_attrs_showwlcg=on&all_resources=on&gridtype=on&gridtype_1=on&active=on&active_value=1&disable_value=1"
+    osg_goc_url = "https://my.opensciencegrid.org/rgsummary/xml?datasource=summary&summary_attrs_showwlcg=on&all_resources=on&gridtype=on&gridtype_1=on&active=on&active_value=1&disable_value=1"
 
     try:
         response = get_url_data(osg_goc_url)
