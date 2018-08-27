@@ -4,11 +4,7 @@ Release:	1%{?dist}
 Summary:	Updates LDAP endpoins for EGI and OSG
 Group:		Development/Libraries
 License:	ASL 2.0
-URL:		http://gridinfo.web.cern.ch 
-# The source for this package was pulled from upstream's vcs.  Use the
-# following commands to generate the tarball:
-#  svn export http://svnweb.cern.ch/guest/gridinfo/te-info-update-endpoints/tags/R_2_0_13_1 %{name}-%{version}
-#  tar --gzip -czvf %{name}-%{version}.tar.gz %{name}-%{version} 
+URL:		https://gridinfo-documentation.readthedocs.io/
 Source:		%{name}-%{version}.src.tgz
 BuildArch:	noarch
 BuildRoot:	%{_tmppath}/%{name}-%{version}-build
